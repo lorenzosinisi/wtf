@@ -7,12 +7,9 @@ module Wtf
       desc "here","This will read you the description of this folder"
       def here
         if Wtf::Doc.content
-          puts "DOC ==> " + Wtf::Doc.content.to_s
+          say "DOC ==> " + Wtf::Doc.content.to_s, :green
         else
-          answer = ask("Do you want to add a documentation for this folder?", :limited_to => ["y", "n"])
-          if answer.to_sym == :y
-            doc
-          end
+          doc if yes?("Do you want to add a documentation for this folder?")
         end
       end
       default_task :here
@@ -20,24 +17,21 @@ module Wtf
       
       desc "doc", "This will write the description of the current folder. \n\n Usage: \n\n wtf doc"
       def doc
-        content = ask("What others should know about this folder?")
+        content = ask("What others should know about this folder? \n\n").to_s
         Wtf::Doc.write(content)
-        puts "Folder documentation added: \n\n " + "Doc ==> " + Wtf::Doc.content
+        say "\n\n Folder documentation added: \n\n"
+        say Wtf::Doc.content.to_s + "\n\n", :green
       end
-
       
       desc "clean", "This will clean the .wtf file from the current folder"
       def clean
         if Wtf::Doc.has_documentation?
-          answer = ask("Are you sure to cleanup the documentation for this folder?", :limited_to => ["y", "n"])
-          if answer.to_sym == :y
+          if yes?("Are you sure to cleanup the documentation for this folder?")
             Wtf::Doc.clean
-            puts :cleaned
-          else
-            puts :ok
+            say :cleaned, :green
           end
         else
-          puts "This directory doesn't have any .wtf file"
+          say "This directory doesn't have any .wtf file", :yellow
         end
       end
 
