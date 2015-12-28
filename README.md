@@ -17,7 +17,6 @@ Iinstall it yourself as:
     $ wtf doc -c "some description" # to add the description of the current folder
 
 
-
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/lorenzosinisi/wtf.

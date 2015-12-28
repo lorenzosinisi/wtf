@@ -6,18 +6,18 @@ module Wtf
     end
 
     def has_documentation?
-      File.exist?(current_path + wtf_file)
+      File.exist?(wtf_file)
     end
 
     alias :is_documented? :has_documentation?
 
     def wtf_file
-      '/.wtf'
+      current_path + '/.wtf'
     end
 
     def clean
       if is_documented?
-        File.delete(current_path + wtf_file)
+        File.delete(wtf_file)
         true
       else
         puts not_documented
@@ -26,16 +26,16 @@ module Wtf
     end
 
     def not_documented
-      "This folder is not documented."
+      "This folder is not documented yet. Add a documentation by running: \n\n wtf -c 'a description of the folder'"
     end
 
     def write(data)
-      File.open(current_path + '/.wtf', 'w') {|f| f.write(data) }
+      File.open(wtf_file, 'w') {|f| f.write(data) }
     end
 
     def content
       if is_documented?
-        data = File.read(current_path + wtf_file)
+        data = File.read(wtf_file)
         data
       else
         puts not_documented

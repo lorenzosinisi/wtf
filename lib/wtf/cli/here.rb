@@ -15,9 +15,11 @@ module Wtf
                         \n\n wtf doc -c 'my documentation'"
       option :c
       def doc(*args)
-        content = options[:c] + " " + args.join(" ") if options[:c]
-        Wtf::Core.new.write(content) if options[:c]
-        puts "Folder documentation added:"
+        if options[:c]
+          content = options[:c] + " " + args.join(" ")
+          Wtf::Core.new.write(content)
+          puts "Folder documentation added:"
+        end
         puts Wtf::Core.new.content
       end
 
