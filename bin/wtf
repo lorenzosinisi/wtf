@@ -1,0 +1,6 @@
+#!/usr/bin/env ruby -wU
+
+require "bundler/setup"
+require "wtf"
+
+Wtf::CLI::Application.start
