@@ -10,11 +10,11 @@ module Wtf
       end
       default_task :here
 
-      desc "document", "This will write the description of this folder.
+      desc "doc", "This will write the description of this folder.
                         \n\n Usage:
                         \n\n wtf document -c 'my documentation'"
       option :c
-      def document(*args)
+      def doc(*args)
         content = options[:c] + " " + args.join(" ")
         Wtf::Core.new.write(content) if options[:c]
         puts "Folder documentation added:"
