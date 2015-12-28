@@ -4,8 +4,7 @@ module Wtf
   module CLI
     class Application < Thor
       
-      desc "here", "This will read you the description of this folder"
-      
+      desc "here","This will read you the description of this folder"
       def here
         puts "DOC ==> " + Wtf::Core.new.content.to_s
       end
@@ -16,7 +15,6 @@ module Wtf
                         \n\n Usage:
                         \n\n wtf doc -c 'my documentation'"
       option :c
-      
       def doc(*args)
         if options[:c]
           content = options[:c] + " " + args.join(" ")
@@ -26,6 +24,12 @@ module Wtf
         else
           puts "Please provide some text with -c"
         end
+      end
+
+      desc "clean", "This will clean the .wtf file from the current folder"
+      option :clean
+      def clean
+        Wtf::Core.new.clean
       end
 
     end
