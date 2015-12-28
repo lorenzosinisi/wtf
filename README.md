@@ -7,7 +7,7 @@ This small utility will create a .wtf file containing a txt description of the c
 
 ## Installation
 
-Iinstall it yourself as:
+Install it yourself as:
 
     $ gem install wtf
 

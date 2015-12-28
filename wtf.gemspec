@@ -9,8 +9,8 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Lorenzo Sinisi"]
   spec.email         = ["lasslo.net@gmail.com"]
 
-  spec.summary       = %q{Command line utility to add descriptions to folders.}
-  spec.description   = %q{Run wtf into a folder to know that is inside}
+  spec.summary       = %q{Command line utility to add descriptions to folders (.wtf files).}
+  spec.description   = %q{Run $ wtf to read/write the documentation of the current folder}
   spec.homepage      = "https://github.com/lorenzosinisi/wtf"
 
   # Prevent pushing this gem to RubyGems.org by setting 'allowed_push_host', or
