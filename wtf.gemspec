@@ -9,8 +9,8 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Lorenzo Sinisi"]
   spec.email         = ["lasslo.net@gmail.com"]
 
-  spec.summary       = %q{TODO: Write a short summary, because Rubygems requires one.}
-  spec.description   = %q{TODO: Write a longer description or delete this line.}
+  spec.summary       = %q{Command line utility to add descriptions to folders.}
+  spec.description   = %q{Command line utility to add descriptions to folders}
   spec.homepage      = "TODO: Put your gem's website or public repo URL here."
 
   # Prevent pushing this gem to RubyGems.org by setting 'allowed_push_host', or
@@ -25,6 +25,9 @@ Gem::Specification.new do |spec|
   spec.bindir        = "exe"
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
+
+  spec.add_dependency 'thor'
+  spec.add_dependency 'httparty'
 
   spec.add_development_dependency "bundler", "~> 1.10"
   spec.add_development_dependency "rake", "~> 10.0"
