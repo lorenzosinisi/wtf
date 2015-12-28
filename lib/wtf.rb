@@ -1,5 +1,5 @@
 require "wtf/version"
+require "wtf/core"
 
 module Wtf
-  # Your code goes here...
 end
