@@ -7,7 +7,7 @@ module Wtf
       desc "here", "This will read you the description of this folder"
       
       def here
-        puts "DOC:" + Wtf::Core.new.content
+        puts "DOC ==> " + Wtf::Core.new.content.to_s
       end
 
       default_task :here
@@ -22,8 +22,10 @@ module Wtf
           content = options[:c] + " " + args.join(" ")
           Wtf::Core.new.write(content)
           puts "Folder documentation added:"
+          puts "Doc ==> " + Wtf::Core.new.content
+        else
+          puts "Please provide some text with -c"
         end
-        puts "DOC:" + Wtf::Core.new.content
       end
 
     end
