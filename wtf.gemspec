@@ -4,7 +4,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'wtf/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "wtf"
+  spec.name          = "wtf-doc"
   spec.version       = Wtf::VERSION
   spec.authors       = ["Lorenzo Sinisi"]
   spec.email         = ["lasslo.net@gmail.com"]
