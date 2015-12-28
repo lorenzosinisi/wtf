@@ -26,7 +26,7 @@ module Wtf
       end
 
       def not_documented
-        "This folder is not documented yet. Add a documentation by running: \n\n wtf doc -c 'a description of the folder'"
+        "This folder is not documented yet."
       end
 
       def write(data)
