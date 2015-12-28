@@ -1,6 +1,6 @@
 require "wtf/version"
-require "wtf/core"
-require "wtf/cli/here"
+require "wtf/doc"
+require "wtf/cli/application"
 
 module Wtf
 end

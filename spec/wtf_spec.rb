@@ -2,8 +2,8 @@ require 'spec_helper'
 
 describe Wtf do
   after(:all) do
-    if Wtf::Core.new.has_documentation?
-      File.delete(Wtf::Core.new.current_path + '/.wtf')
+    if Wtf::Doc.has_documentation?
+      File.delete(Wtf::Doc.current_path + '/.wtf')
     end
   end
   it 'has a version number' do

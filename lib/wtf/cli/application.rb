@@ -6,7 +6,7 @@ module Wtf
       
       desc "here","This will read you the description of this folder"
       def here
-        puts "DOC ==> " + Wtf::Core.new.content.to_s
+        puts "DOC ==> " + Wtf::Doc.content.to_s
       end
 
       default_task :here
@@ -18,9 +18,9 @@ module Wtf
       def doc(*args)
         if options[:c]
           content = options[:c] + " " + args.join(" ")
-          Wtf::Core.new.write(content)
+          Wtf::Doc.write(content)
           puts "Folder documentation added:"
-          puts "Doc ==> " + Wtf::Core.new.content
+          puts "Doc ==> " + Wtf::Doc.content
         else
           puts "Please provide some text with -c"
         end
@@ -29,7 +29,7 @@ module Wtf
       desc "clean", "This will clean the .wtf file from the current folder"
       option :clean
       def clean
-        Wtf::Core.new.clean
+        Wtf::Doc.clean
       end
 
     end

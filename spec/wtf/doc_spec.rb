@@ -1,13 +1,13 @@
 require 'spec_helper'
 
 module Wtf
-  describe Core do
+  describe Doc do
     
-    let(:wtf) { Core.new }
+    let(:wtf) { Doc }
     
     after(:each) do
-      if Wtf::Core.new.has_documentation?
-        File.delete(Wtf::Core.new.current_path + '/.wtf')
+      if Wtf::Doc.has_documentation?
+        File.delete(Wtf::Doc.current_path + '/.wtf')
       end
     end
 
@@ -43,12 +43,12 @@ module Wtf
           content = "This is a completely useless folder, drop it."
           wtf.write(content)
           expect(wtf.content).to eq content
-          File.delete(Wtf::Core.new.current_path + '/.wtf')
+          File.delete(Wtf::Doc.current_path + '/.wtf')
         end
 
         after(:each) do
-          if Wtf::Core.new.has_documentation?
-            File.delete(Wtf::Core.new.current_path + '/.wtf')
+          if Wtf::Doc.has_documentation?
+            File.delete(Wtf::Doc.current_path + '/.wtf')
           end
         end
 
