@@ -1,4 +1,4 @@
-# Wtf-doc
+# Wtf-doc - Library to add the documentation to the current Folder
 
 Never run into so many folders that you have no idea what contains what? This is a tool to add a descriptions to your folders. 
 Especially useful in Linux servers when collaborating with many other people. A .wtf file is created into the current folder and a small description can be added and readed from it just by running 'wtf' in the command line.
